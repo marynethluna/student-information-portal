@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
-import { coursesData } from '../data/coursesData';
+import React from 'react';
 import CourseCard from '../components/CourseCard';
 
 function Courses() {
-  const [courses] = useState(coursesData);
-
   return (
     <main className="page-content courses-page">
       <header className="page-header">
-        <h1>Course Catalog</h1>
-        <p>Explore current academic course offerings, instructors, credits, schedules, and capacity limits.</p>
+        <h1>Courses</h1>
       </header>
 
-      <section className="directory-summary">
-        <p>Showing <strong>{courses.length}</strong> available courses</p>
-      </section>
-
       <section className="cards-grid">
-        {courses.map((course) => (
-          <CourseCard key={course.id} course={course} />
-        ))}
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
       </section>
     </main>
   );

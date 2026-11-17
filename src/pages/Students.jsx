@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
-import { studentsData } from '../data/studentsData';
+import React from 'react';
 import StudentCard from '../components/StudentCard';
 
 function Students() {
-  const [students] = useState(studentsData);
-
   return (
     <main className="page-content students-page">
       <header className="page-header">
-        <h1>Student Directory</h1>
-        <p>Browse through registered students, review their academic majors, GPA, and enrolled courses.</p>
+        <h1>Students</h1>
       </header>
 
-      <section className="directory-summary">
-        <p>Showing <strong>{students.length}</strong> registered students</p>
-      </section>
-
       <section className="cards-grid">
-        {students.map((student) => (
-          <StudentCard key={student.id} student={student} />
-        ))}
+        <StudentCard />
+        <StudentCard />
+        <StudentCard />
+        <StudentCard />
+        <StudentCard />
+        <StudentCard />
       </section>
     </main>
   );
