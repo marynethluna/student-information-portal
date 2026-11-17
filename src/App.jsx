@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Students from './pages/Students';
 import Courses from './pages/Courses';
@@ -11,29 +10,25 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app-layout">
-        <Navbar />
-
-        <div className="main-container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/students" element={<Students />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/about" element={<About />} />
-            <Route 
-              path="*" 
-              element={
-                <main className="page-content empty-state-box" style={{ margin: '4rem auto' }}>
-                  <div className="empty-icon">404</div>
-                  <h2>Page Not Found</h2>
-                  <p>The page you are looking for does not exist or has been moved.</p>
-                  <Link to="/" className="btn btn-primary" style={{ marginTop: '1rem' }}>
-                    Return to Home
-                  </Link>
-                </main>
-              } 
-            />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/about" element={<About />} />
+          <Route 
+            path="*" 
+            element={
+              <main className="page-content empty-state-box" style={{ margin: '4rem auto' }}>
+                <div className="empty-icon">404</div>
+                <h2>Page Not Found</h2>
+                <p>The page you are looking for does not exist or has been moved.</p>
+                <Link to="/" className="btn btn-primary" style={{ marginTop: '1rem' }}>
+                  Return to Home
+                </Link>
+              </main>
+            } 
+          />
+        </Routes>
 
         <footer className="portal-footer">
           <div className="footer-content">
@@ -46,7 +41,7 @@ function App() {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/students">Students</Link></li>
               <li><Link to="/courses">Courses</Link></li>
-              <li><Link to="/about">About &amp; Help</Link></li>
+              <li><Link to="/about">About</Link></li>
             </ul>
 
             <div className="footer-meta">
